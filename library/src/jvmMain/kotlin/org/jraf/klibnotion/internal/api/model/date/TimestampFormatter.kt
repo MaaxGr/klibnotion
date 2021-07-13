@@ -32,7 +32,7 @@ internal actual class TimestampFormatter actual constructor(format: String) {
     private val simpleDateFormat = SimpleDateFormat(format).apply {
         // Set the default timezone to GMT for the case where it's not present in the date to parse
         // which is the case when it's a date without a time.
-        timeZone = TimeZone.getTimeZone("GMT")
+        timeZone = TimeZone.getDefault()
     }
 
     actual fun parse(formattedDate: String): Timestamp {
